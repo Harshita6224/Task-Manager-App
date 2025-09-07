@@ -6,29 +6,79 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="container">
-        <h1>📝Task Manager App</h1>
-        <div class="input-section">
-            <input type="text" id="taskInput" placeholder="Add a new task....."/>
-            <input type="date" id="dueDate">
-            <select id="priority">
-                <option value="Low">Low</option>
-                <option value="Medium" selected>Medium</option>
-                <option value="High">High</option>
-            </select>
-            <select onchange="filterTasks(this.value)">
-                 <option value="All">All</option>
-                 <option value="High">High</option>
-                 <option value="Medium">Medium</option>
-                 <option value="Low">Low</option>
-            </select>
-            
-            <button onclick="addTask()">Add Task</button>
-            <button onclick="toggleDarkMode()">🌙 Toggle Mode</button>
+       <body data-theme="light">
+    <div class="container">
+        <div class="header">
+            <h1>TaskMaster Pro</h1>
+            <p>Advanced productivity management</p>
+        </div>
 
+        <div class="controls">
+            <input type="text" class="search-bar" id="searchBar" placeholder="Search tasks...">
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+                <button class="filter-btn" data-filter="high">High Priority</button>
+            </div>
+
+            <button class="theme-toggle" id="themeToggle">🌙</button>
         </div>
-        <ul id="taskList"></ul>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <div class="progress-title">Progress Overview</div>
+                <div class="progress-stats" id="progressStats">0 of 0 tasks completed</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
         </div>
+
+        <form class="task-form" id="taskForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="taskTitle">Task Title</label>
+                    <input type="text" id="taskTitle" required placeholder="Enter task title...">
+                </div>
+                <div class="form-group small">
+                    <label for="taskPriority">Priority</label>
+                    <select id="taskPriority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form-group small">
+                    <label for="taskDueDate">Due Date</label>
+                    <input type="date" id="taskDueDate">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="taskDescription">Description</label>
+                    <textarea id="taskDescription" placeholder="Optional description..."></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="submitBtn">
+                <span>➕</span> Add Task
+            </button>
+        </form>
+
+        <div class="task-list" id="taskList">
+            <!-- Tasks will be dynamically inserted here -->
+        </div>
+
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <div class="empty-state-icon">📝</div>
+            <h3>No tasks found</h3>
+            <p>Add your first task to get started!</p>
+        </div>
+    </div>
+
         <script src="script.js"></script>
     </body>
 </html>
