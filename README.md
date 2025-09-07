@@ -74,44 +74,6 @@ TaskMaster Pro/
 │   └── Storage API     # Local storage operations
 └── README.md          # Project documentation
 
-# 📖 Usage
-# Adding Tasks
-
-Fill in the task title (required)
-Select priority level (Low/Medium/High)
-Set due date (optional)
-Add description (optional)
-Click "Add Task" button
-
-# Managing Tasks
-
-Complete Task: Click the checkmark button to mark as completed
-Edit Task: Click the edit button to modify task details
-Delete Task: Click the delete button to remove the task
-Undo Completion: Click "Undo" to mark completed tasks as pending
-
-# Search and Filter
-
-Search: Type in the search bar to find tasks by title or description
-Filter by Status: Use "All", "Pending", or "Completed" filters
-Filter by Priority: Use "High Priority" filter to see urgent tasks
-
-# Theme Toggle
-Click the moon/sun icon in the top-right corner to switch between light and dark themes.
-# 🛠️ Technical Details
-Architecture
-TaskMaster Pro/
-├── index.html          # Main HTML structure
-├── styles/             # CSS styles (embedded)
-│   ├── variables       # CSS custom properties
-│   ├── layout          # Grid and flexbox layouts
-│   ├── components      # UI component styles
-│   └── responsive      # Media queries
-├── scripts/            # JavaScript functionality (embedded)
-│   ├── TodoApp class   # Main application logic
-│   ├── DOM manipulation # Event handling and rendering
-│   └── Storage API     # Local storage operations
-└── README.md          # Project documentation
 # Key Technologies
 
 HTML5: Semantic markup and modern form elements
